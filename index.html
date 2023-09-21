@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strings</title>
+    <link href="./style.css" rel="Stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+      <div class="input text">Enter the value</div>
+      <input type="Text" id="Text" placeholder="Any values">
+        <div class="btn">
+            <input type = "radio" name="methods" onclick="ln()" />To find Length<br>
+            <input type = "radio" name="methods"onclick="sl()" />Slice upto 4th element<br>
+            <input type = "radio" name="methods"onclick="sb()" />Give value between 2 and 6 substring <br>
+            <input type = "radio" name="methods" onclick="st()" />Give subst value after 5 and next 3 values<br>
+            <input type = "radio" name="methods" onclick="RP()" />To Replace<br>
+            
+        </div>
+        <div class="results">
+
+        </div>
+    </div>
+    <script>
+        function ln(){
+        let A=document.getElementById("Text").value
+        console.log(A.length);
+
+        let results=document.querySelector(".results")
+        results.textContent = A.length
+        }
+        function sl(){
+        let A=document.getElementById("Text").value
+        console.log(A.length);
+        let results=document.querySelector(".results")
+        results.textContent = A.slice(4)
+        if(A.length >= 4)
+        {
+            results.textContent = A.slice(4);
+        }
+        else{
+            results.textContent = 'The length is too short';
+        }
+        }
+        function sb(){
+        let A=document.getElementById("Text").value
+        console.log(A.length);
+
+        let results=document.querySelector(".results")
+        results.textContent = A.substring(2, 6)
+        if(A.length >= 2 && A.length >= 6)
+        {
+            results.textContent = A.substring(2, 6);
+        }
+        else{
+            results.textContent = 'The length is too short';
+        }
+        }
+        function st(){
+        let A=document.getElementById("Text").value
+        console.log(A.length);
+
+        let results=document.querySelector(".results")
+        results.textContent = A.substr(5,3)
+        if(A.length >= 5)
+        {
+            results.textContent = A.substr(5,3);
+        }
+        else{
+            results.textContent = 'The length is too short';
+        }
+        }
+        function RP()
+        {
+            let A=document.getElementById("Text").value
+            let results=document.querySelector(".results")
+            results.textContent = A.replace(A,45)
+        }
+        
+    </script>
+
+</body>
+</html>
+
